@@ -1,0 +1,10 @@
+package com.example.demo.day04_di;
+
+public class PopupService implements NotificationService{
+
+    @Override
+    public void sendNotification(){
+        System.out.println("Pop-up notification sent successfully !! ");
+    }
+
+}
