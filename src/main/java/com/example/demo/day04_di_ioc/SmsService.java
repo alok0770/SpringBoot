@@ -1,4 +1,4 @@
-package com.example.demo.day04_di;
+package com.example.demo.day04_di_ioc;
 
 public class SmsService implements NotificationService{
 
