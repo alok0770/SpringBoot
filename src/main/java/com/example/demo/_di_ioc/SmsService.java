@@ -1,8 +1,10 @@
 package com.example.demo._di_ioc;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 public class SmsService implements NotificationService{
 
     @Override

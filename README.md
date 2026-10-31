@@ -41,7 +41,8 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 - Configuration & Component Scanning (`@Configuration`, `@ComponentScan`)
 - Automatic Bean discovery using `@Component`
 - Constructor Injection using `@Autowired`
-- Handling `NoUniqueBeanDefinitionException` using `@Primary`
+- Resolving Bean ambiguity: `@Primary` vs `@Qualifier`
+- Tested and verified that `@Qualifier` takes precedence over `@Primary`
 
 ---
 
