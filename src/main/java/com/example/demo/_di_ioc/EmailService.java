@@ -1,5 +1,11 @@
-package com.example.demo.day04_di_ioc;
+package com.example.demo._di_ioc;
 
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
 public class EmailService implements NotificationService{
 
     @Override

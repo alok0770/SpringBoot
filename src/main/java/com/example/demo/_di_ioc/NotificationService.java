@@ -1,4 +1,4 @@
-package com.example.demo.day04_di_ioc;
+package com.example.demo._di_ioc;
 
 public interface NotificationService {
 

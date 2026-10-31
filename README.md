@@ -35,7 +35,13 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 - Tight Coupling vs Loose Coupling (Why IoC is needed)
 - Hands-on implementation: `NotificationService` interface with `EmailService`, `SmsService`, and `PopupService`
 - Constructor Dependency Injection in `OrderService`
-- Next: Transitioning to Spring's actual IoC Container (`ApplicationContext`, `@Component`, `@Autowired`)
+
+### ✅ Day 05: Spring IoC Container & Bean Management
+- Managing beans via Spring's `AnnotationConfigApplicationContext`
+- Configuration & Component Scanning (`@Configuration`, `@ComponentScan`)
+- Automatic Bean discovery using `@Component`
+- Constructor Injection using `@Autowired`
+- Handling `NoUniqueBeanDefinitionException` using `@Primary`
 
 ---
 
@@ -45,13 +51,14 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 ├── src/
 │   ├── main/
 │   │   ├── java/com/example/demo/
-│   │   │   ├── day04_di/              # Day 4: Dependency Injection & Loose Coupling
-│   │   │   │   ├── EmailService.java
-│   │   │   │   ├── SmsService.java
-│   │   │   │   ├── PopupService.java
-│   │   │   │   ├── NotificationService.java
-│   │   │   │   ├── OrderService.java
-│   │   │   │   └── Main.java
+│   │   │   ├── _di_ioc/               # Spring IoC Container & Dependency Injection
+│   │   │   │   ├── AppConfig.java     # Spring configuration & component scan
+│   │   │   │   ├── EmailService.java  # @Component, @Primary
+│   │   │   │   ├── SmsService.java    # @Component
+│   │   │   │   ├── PopupService.java  # @Component
+│   │   │   │   ├── NotificationService.java # Interface
+│   │   │   │   ├── OrderService.java  # @Component, @Autowired
+│   │   │   │   └── Main.java          # IoC Container runner
 │   │   │   ├── DemoApplication.java   # Spring Boot entry point
 │   │   │   └── HelloController.java   # Day 2 REST controller
 │   │   └── resources/
