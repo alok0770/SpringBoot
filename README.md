@@ -49,10 +49,11 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 - Breaking the circular reference cycle using Field Injection (`@Autowired`)
 - Deep dive: How Spring's two-phase lifecycle (Instantiation vs Property Population) solves circularity
 
-### ⏳ Day 07: Spring Bean Lifecycle *(In Progress)*
-- Understanding Bean Lifecycle stages: Instantiation ➔ Dependency Injection ➔ Init Callback ➔ Bean Ready ➔ Destroy Callback
-- Exploring `@PostConstruct` and `@PreDestroy`
-- Implementing `InitializingBean` and `DisposableBean` interfaces
+### ⏳ Day 07: Spring Bean Scopes *(In Progress)*
+- Understanding Spring Bean Scopes: `@Scope("singleton")` vs `@Scope("prototype")`
+- Default Singleton scope (Single shared instance per IoC container)
+- Prototype scope (New instance created on every `getBean()` or injection)
+- Web-aware scopes overview: `request`, `session`, `application`, `websocket`
 
 ---
 
@@ -68,7 +69,7 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 │   │   │   │   │   ├── OrderService.java
 │   │   │   │   │   ├── PaymentService.java
 │   │   │   │   │   └── Main.java
-│   │   │   │   ├── beanlifecycle/     # Bean Lifecycle Callbacks (In Progress)
+│   │   │   │   ├── beanscopes/        # Bean Scopes: Singleton vs Prototype (In Progress)
 │   │   │   │   ├── user/
 │   │   │   │   │   └── User.java      # POJO model created via @Bean
 │   │   │   │   ├── AppConfig.java     # @Configuration, @ComponentScan, @Bean
