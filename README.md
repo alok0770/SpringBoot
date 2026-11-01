@@ -49,10 +49,11 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 - Breaking the circular reference cycle using Field Injection (`@Autowired`)
 - Deep dive: How Spring's two-phase lifecycle (Instantiation vs Property Population) solves circularity
 
-### ⏳ Day 07: Spring Bean Scopes *(In Progress)*
+### ✅ Day 07: Spring Bean Scopes
 - Understanding Spring Bean Scopes: `@Scope("singleton")` vs `@Scope("prototype")`
-- Default Singleton scope (Single shared instance per IoC container)
-- Prototype scope (New instance created on every `getBean()` or injection)
+- Default Singleton scope: Single shared instance across IoC container (Eagerly created at startup)
+- Prototype scope: Brand new instance created on demand per injection / `getBean()` (Lazy creation)
+- Practical demo: Shared `PrinterService` (Singleton) vs Isolated `ShoppingCart` (Prototype)
 - Web-aware scopes overview: `request`, `session`, `application`, `websocket`
 
 ---
@@ -69,7 +70,11 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 │   │   │   │   │   ├── OrderService.java
 │   │   │   │   │   ├── PaymentService.java
 │   │   │   │   │   └── Main.java
-│   │   │   │   ├── beanscopes/        # Bean Scopes: Singleton vs Prototype (In Progress)
+│   │   │   │   ├── beanscopes/        # Bean Scopes (Singleton vs Prototype)
+│   │   │   │   │   ├── AppConfig.java
+│   │   │   │   │   ├── PrinterService.java # @Scope("singleton")
+│   │   │   │   │   ├── ShoppingCart.java   # @Scope("prototype")
+│   │   │   │   │   └── Main.java
 │   │   │   │   ├── user/
 │   │   │   │   │   └── User.java      # POJO model created via @Bean
 │   │   │   │   ├── AppConfig.java     # @Configuration, @ComponentScan, @Bean
