@@ -1,5 +1,6 @@
 package com.example.demo._di_ioc.beanscopes;
 
+import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -9,8 +10,10 @@ import org.springframework.stereotype.Component;
  * and everyone shares the same printer instance.
  */
 @Component
-@Scope("singleton") // By default Spring beans are singleton, this annotation is explicit
+@Scope("singleton")
+@Lazy// By default Spring beans are singleton, this annotation is explicit
 public class PrinterService {
+
 
     public PrinterService() {
         System.out.println("🖨️ [Singleton] PrinterService instance created in memory!");

@@ -1,18 +1,19 @@
 package com.example.demo._di_ioc.circulardependency;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
 @Component
 public class OrderService {
 
-    @Autowired
     public PaymentService payment;
 
 
-//    public OrderService(PaymentService payment){
-//        this.payment = payment;
-//    }
+    @Lazy
+    public OrderService(PaymentService payment){
+        this.payment = payment;
+    }
 
     public void placeOrder(){
         payment.pay();

@@ -12,13 +12,13 @@ import java.util.List;
  * their OWN fresh new cart. One customer's items do NOT mix with another's.
  */
 @Component
-@Scope("prototype") // Spring will create a BRAND NEW instance every single time!
+@Scope("prototype") // Spring will create a (BRAND NEW) instance every single time!
 public class ShoppingCart {
 
     private final List<String> items = new ArrayList<>();
 
     public ShoppingCart() {
-        System.out.println("🛒 [Prototype] New ShoppingCart instance created in memory!");
+        System.out.println("[Prototype] New ShoppingCart instance created in memory!");
     }
 
     public void addItem(String item) {

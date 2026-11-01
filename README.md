@@ -46,14 +46,18 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 ### ✅ Day 06: Circular Dependency & Resolution
 - Understanding Circular Dependency loops (`OrderService` ⇄ `PaymentService`)
 - Diagnosing `BeanCurrentlyInCreationException` during Constructor Injection
-- Breaking the circular reference cycle using Field Injection (`@Autowired`)
-- Deep dive: How Spring's two-phase lifecycle (Instantiation vs Property Population) solves circularity
+- Breaking the circular reference cycle:
+  - Approach 1: Field Injection (`@Autowired`) via two-phase bean lifecycle
+  - Approach 2: Constructor Injection with `@Lazy` proxy injection
 
-### ✅ Day 07: Spring Bean Scopes
+### ✅ Day 07: Spring Bean Scopes & Lazy Loading
 - Understanding Spring Bean Scopes: `@Scope("singleton")` vs `@Scope("prototype")`
-- Default Singleton scope: Single shared instance across IoC container (Eagerly created at startup)
-- Prototype scope: Brand new instance created on demand per injection / `getBean()` (Lazy creation)
-- Practical demo: Shared `PrinterService` (Singleton) vs Isolated `ShoppingCart` (Prototype)
+- Eager vs Lazy Loading:
+  - Default Singleton behavior (Eagerly instantiated at container startup)
+  - Applying `@Lazy` on Singleton beans to defer instantiation until first use
+  - Prototype beans instantiated on demand (Lazy by design)
+- Practical demo: Shared `PrinterService` (Singleton with `@Lazy`) vs Isolated `ShoppingCart` (Prototype)
+- Understanding why Spring uses `@Lazy(false)` instead of a dedicated `@Eager` annotation
 - Web-aware scopes overview: `request`, `session`, `application`, `websocket`
 
 ---
