@@ -1,5 +1,7 @@
 package com.example.demo._di_ioc;
 
+import com.example.demo._di_ioc.User.User;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,5 +9,9 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan("com.example.demo._di_ioc")
 
 public class AppConfig {
-    // empty
+
+    @Bean
+    public User creatUser(){
+        return new User ("Alok" , 21);
+    }
 }

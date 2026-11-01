@@ -10,7 +10,7 @@ public class OrderService {
  private final NotificationService notification;
 
  @Autowired
-    public OrderService(@Qualifier("popupService") NotificationService notification){
+    public OrderService(@Qualifier("Sms") NotificationService notification){
         this.notification = notification;
     }
     public void placeOrder(){

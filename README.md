@@ -39,10 +39,11 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 ### ✅ Day 05: Spring IoC Container & Bean Management
 - Managing beans via Spring's `AnnotationConfigApplicationContext`
 - Configuration & Component Scanning (`@Configuration`, `@ComponentScan`)
-- Automatic Bean discovery using `@Component`
+- `@Component` (Automatic discovery) vs `@Bean` (Explicit object creation)
+- Creating Parameterized Beans via `@Bean` method (`User` model initialized with custom state)
 - Constructor Injection using `@Autowired`
-- Resolving Bean ambiguity: `@Primary` vs `@Qualifier`
-- Tested and verified that `@Qualifier` takes precedence over `@Primary`
+- Custom Qualifier naming (`@Qualifier("Sms")`, `@Qualifier("pop")`, `@Qualifier("Email")`)
+- Verified that `@Qualifier` takes precedence over `@Primary`
 
 ---
 
@@ -53,10 +54,12 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 │   ├── main/
 │   │   ├── java/com/example/demo/
 │   │   │   ├── _di_ioc/               # Spring IoC Container & Dependency Injection
-│   │   │   │   ├── AppConfig.java     # Spring configuration & component scan
-│   │   │   │   ├── EmailService.java  # @Component, @Primary
-│   │   │   │   ├── SmsService.java    # @Component
-│   │   │   │   ├── PopupService.java  # @Component
+│   │   │   │   ├── User/
+│   │   │   │   │   └── User.java      # POJO model created via @Bean
+│   │   │   │   ├── AppConfig.java     # @Configuration, @ComponentScan, @Bean
+│   │   │   │   ├── EmailService.java  # @Component, @Primary, @Qualifier("Email")
+│   │   │   │   ├── SmsService.java    # @Component, @Qualifier("Sms")
+│   │   │   │   ├── PopupService.java  # @Component, @Qualifier("pop")
 │   │   │   │   ├── NotificationService.java # Interface
 │   │   │   │   ├── OrderService.java  # @Component, @Autowired
 │   │   │   │   └── Main.java          # IoC Container runner

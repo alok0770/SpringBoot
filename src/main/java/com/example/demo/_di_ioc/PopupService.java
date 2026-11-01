@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier
+@Qualifier("pop")
 public class PopupService implements NotificationService{
 
     @Override

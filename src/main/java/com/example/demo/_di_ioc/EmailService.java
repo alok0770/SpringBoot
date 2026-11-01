@@ -6,7 +6,8 @@ import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier
+@Primary
+@Qualifier("Email")
 public class EmailService implements NotificationService{
 
     @Override
