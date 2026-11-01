@@ -43,7 +43,16 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 - Creating Parameterized Beans via `@Bean` method (`User` model initialized with custom state)
 - Constructor Injection using `@Autowired`
 - Custom Qualifier naming (`@Qualifier("Sms")`, `@Qualifier("pop")`, `@Qualifier("Email")`)
-- Verified that `@Qualifier` takes precedence over `@Primary`
+### ✅ Day 06: Circular Dependency & Resolution
+- Understanding Circular Dependency loops (`OrderService` ⇄ `PaymentService`)
+- Diagnosing `BeanCurrentlyInCreationException` during Constructor Injection
+- Breaking the circular reference cycle using Field Injection (`@Autowired`)
+- Deep dive: How Spring's two-phase lifecycle (Instantiation vs Property Population) solves circularity
+
+### ⏳ Day 07: Spring Bean Lifecycle *(In Progress)*
+- Understanding Bean Lifecycle stages: Instantiation ➔ Dependency Injection ➔ Init Callback ➔ Bean Ready ➔ Destroy Callback
+- Exploring `@PostConstruct` and `@PreDestroy`
+- Implementing `InitializingBean` and `DisposableBean` interfaces
 
 ---
 
@@ -54,7 +63,13 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 │   ├── main/
 │   │   ├── java/com/example/demo/
 │   │   │   ├── _di_ioc/               # Spring IoC Container & Dependency Injection
-│   │   │   │   ├── User/
+│   │   │   │   ├── circulardependency/# Circular Dependency & Resolution via Field Injection
+│   │   │   │   │   ├── AppConfig.java
+│   │   │   │   │   ├── OrderService.java
+│   │   │   │   │   ├── PaymentService.java
+│   │   │   │   │   └── Main.java
+│   │   │   │   ├── beanlifecycle/     # Bean Lifecycle Callbacks (In Progress)
+│   │   │   │   ├── user/
 │   │   │   │   │   └── User.java      # POJO model created via @Bean
 │   │   │   │   ├── AppConfig.java     # @Configuration, @ComponentScan, @Bean
 │   │   │   │   ├── EmailService.java  # @Component, @Primary, @Qualifier("Email")

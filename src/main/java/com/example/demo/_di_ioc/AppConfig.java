@@ -1,6 +1,6 @@
 package com.example.demo._di_ioc;
 
-import com.example.demo._di_ioc.User.User;
+import com.example.demo._di_ioc.user.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

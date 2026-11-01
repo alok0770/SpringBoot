@@ -1,4 +1,4 @@
-package com.example.demo._di_ioc.User;
+package com.example.demo._di_ioc.user;
 
 public class User {
 

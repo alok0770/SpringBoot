@@ -1,7 +1,7 @@
 package com.example.demo._di_ioc;
 
 
-import com.example.demo._di_ioc.User.User;
+import com.example.demo._di_ioc.user.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
