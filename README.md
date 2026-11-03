@@ -58,7 +58,12 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
   - Prototype beans instantiated on demand (Lazy by design)
 - Practical demo: Shared `PrinterService` (Singleton with `@Lazy`) vs Isolated `ShoppingCart` (Prototype)
 - Understanding why Spring uses `@Lazy(false)` instead of a dedicated `@Eager` annotation
-- Web-aware scopes overview: `request`, `session`, `application`, `websocket`
+### ✅ Day 08: Spring Bean Lifecycle & Spring vs Spring Boot
+- Deep dive into Bean Lifecycle phases: Instantiation ➔ Property Injection ➔ Initialization ➔ Active ➔ Destruction
+- Modern Annotation-based Lifecycle Callbacks: `@PostConstruct` and `@PreDestroy`
+- Constructor vs `@PostConstruct`: Why initialization logic belongs in `@PostConstruct` (dependencies are `null` at constructor time)
+- Graceful shutdown and resource cleanup via `context.close()`
+- Core architectural differences: Traditional Spring vs Spring Boot (Auto-configuration, Embedded Tomcat, Starters)
 
 ---
 
@@ -69,6 +74,11 @@ Welcome to my Spring Boot repository! This repository documents my daily learnin
 │   ├── main/
 │   │   ├── java/com/example/demo/
 │   │   │   ├── _di_ioc/               # Spring IoC Container & Dependency Injection
+│   │   │   │   ├── BeanLifeCycle/     # Day 8: Bean Lifecycle (@PostConstruct & @PreDestroy)
+│   │   │   │   │   ├── ConfiApp.java
+│   │   │   │   │   ├── DatabaseConnection.java
+│   │   │   │   │   ├── DatabaseService.java
+│   │   │   │   │   └── Main.java
 │   │   │   │   ├── circulardependency/# Circular Dependency & Resolution via Field Injection
 │   │   │   │   │   ├── AppConfig.java
 │   │   │   │   │   ├── OrderService.java
